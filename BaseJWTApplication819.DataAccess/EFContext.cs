@@ -11,7 +11,6 @@ namespace BaseJWTApplication819.DataAccess
     {
         public EFContext(DbContextOptions<EFContext> options) : base(options) { }
 
-        public DbSet<Product> Products { get; set; }
         public DbSet<Discussion> Discussions { get; set; }
         public DbSet<Options> Options { get; set; }
         public DbSet<UserAdditionalInfo> UserAdditionalInfos { get; set; }

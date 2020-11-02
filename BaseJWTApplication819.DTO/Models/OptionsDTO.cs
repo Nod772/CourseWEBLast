@@ -5,11 +5,14 @@ using System.Text;
 
 namespace BaseJWTApplication819.DTO.Models
 {
-   public class DiscussionDTO
+    public class OptionsDTO
     {
         public int ID { get; set; }
-        public string QuestionText { get; set; }
+        public string Value { get; set; }
+        public int Counter { get; set; }
 
-        public virtual List<Options> Options { get; set; }
+        public virtual Discussion Discussion { get; set; }
     }
 }
+
+

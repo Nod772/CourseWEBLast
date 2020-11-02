@@ -33,10 +33,11 @@ namespace BaseJWTApplication819.Api_Angular
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-
+           
             services.AddDbContext<EFContext>(opt =>
                 opt.UseSqlServer(Configuration["ConnectionString"],
                 b => b.MigrationsAssembly("BaseJWTApplication819.Api+Angular"))
+              
             );
 
             services.AddIdentity<User, IdentityRole>()

@@ -8,8 +8,8 @@ import { ClientAreaComponent } from './Client-area/Client-area.component';
 import { AdminGuard } from './guards/admin.guard';
 import { notLoginGuard } from './guards/notLogin.guard';
 import { LoggedInGuard } from './guards/loggedIn.guard';
-import { ProductListComponent } from './Admin-area/product-list/product-list.component';
-import { AddProductComponent } from './Admin-area/add-product/add-product.component';
+//import { ProductListComponent } from './Admin-area/product-list/product-list.component';
+//import { AddProductComponent } from './Admin-area/add-product/add-product.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -18,11 +18,11 @@ const routes: Routes = [
   {
     path: 'admin-panel',
     canActivate: [AdminGuard],
-    component: AdminAreaComponent,
-    children: [
-      { path: '', pathMatch: 'full', canActivate: [AdminGuard], component: ProductListComponent },
-      { path: 'add-new-product', pathMatch: 'full', canActivate: [AdminGuard], component: AddProductComponent },
-    ]
+    component: AdminAreaComponent
+  //  children: [
+      //{ path: '', pathMatch: 'full', canActivate: [AdminGuard], component: ProductListComponent },
+    //  { path: 'add-new-product', pathMatch: 'full', canActivate: [AdminGuard], component: AddProductComponent },
+    //]
 
   },
   { path: 'client-panel', canActivate: [LoggedInGuard], pathMatch: 'full', component: ClientAreaComponent }

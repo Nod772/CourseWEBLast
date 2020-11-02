@@ -27,9 +27,9 @@ namespace BaseJWTApplication819.Api_Angular.Helper
         }
         private static void SeedUsers(UserManager<User> userManager, RoleManager<IdentityRole> roleManager,EFContext context)
         {
-            context.Products.Add(new Product { Title = "Nuts", Price = 50, Description = "...", ImageURL = "https://images-na.ssl-images-amazon.com/images/I/71oR9w5AjbL._SX569_.jpg" });  
-            context.Products.Add(new Product { Title = "Milk", Price = 15, Description = "...", ImageURL = "https://greenfood.in.ua/image/cache/catalog/tovar/napij-vivsjanij-ultrapasterizovanij-vega-milk-640x640.jpg" });
-            context.Products.Add(new Product { Title = "Apple", Price = 10, Description = "...", ImageURL = "https://sites.google.com/site/knowyourfruit/_/rsrc/1284636557816/know-your-apples/Apple 02.jpg?height=362&width=400" });
+            //context.Products.Add(new Product { Title = "Nuts", Price = 50, Description = "...", ImageURL = "https://images-na.ssl-images-amazon.com/images/I/71oR9w5AjbL._SX569_.jpg" });  
+            //context.Products.Add(new Product { Title = "Milk", Price = 15, Description = "...", ImageURL = "https://greenfood.in.ua/image/cache/catalog/tovar/napij-vivsjanij-ultrapasterizovanij-vega-milk-640x640.jpg" });
+            //context.Products.Add(new Product { Title = "Apple", Price = 10, Description = "...", ImageURL = "https://sites.google.com/site/knowyourfruit/_/rsrc/1284636557816/know-your-apples/Apple 02.jpg?height=362&width=400" });
    
   
             var roleName = "Admin";

@@ -20,8 +20,6 @@ import { ClientAreaComponent } from './Client-area/Client-area.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { NgZorroAntdModule } from './ng-zoro.module';
-import { AddProductComponent } from './Admin-area/add-product/add-product.component';
-import { ProductListComponent } from './Admin-area/product-list/product-list.component';
 import { TokenInterceptor } from './interceptor';
 
 
@@ -49,9 +47,7 @@ const configNotifier: NotifierOptions = {
     AdminAreaComponent,
     ClientAreaComponent,
     SignUpComponent,
-    SignInComponent,
-    ProductListComponent,
-    AddProductComponent
+    SignInComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -65,7 +61,8 @@ const configNotifier: NotifierOptions = {
   ],
   providers: [NgxSpinnerService,
     { provide: NZ_ICONS, useValue: icons },
-    { provide: HTTP_INTERCEPTORS, useValue: TokenInterceptor, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

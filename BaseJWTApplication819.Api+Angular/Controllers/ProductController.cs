@@ -21,32 +21,32 @@ namespace BaseJWTApplication819.Api_Angular.Controllers
             _context = context;
         }
 
-        [Authorize(Roles ="Admin")]
-        [HttpGet]
-        public List<ProductDTO> getAllProducts()
-        {
-            var data = _context.Products.Select(t => new ProductDTO
-            {
-                Id = t.Id,
-                Description = t.Description,
-                Title = t.Title,
-                Image = t.ImageURL,
-                Price = t.Price
+        //[Authorize(Roles ="Admin")]
+        //[HttpGet]
+        //public List<OptionsDTO> getAllProducts()
+        //{
+        //    var data = _context.Products.Select(t => new OptionsDTO
+        //    {
+        //        Id = t.Id,
+        //        Description = t.Description,
+        //        Title = t.Title,
+        //        Image = t.ImageURL,
+        //        Price = t.Price
 
-            }).ToList();
-            return data;
-        }
-        [Authorize(Roles ="Admin")]
-        [HttpGet("addProduct")]
-        public async Task<ResultDTO> addProduct([FromBody]UserLoginDTO model) 
-        {
-            return new ResultDTO
-            {
-                Message = "OK",
-                Status = 200
-            };
+        //    }).ToList();
+        //    return data;
+        //}
+        //[Authorize(Roles ="Admin")]
+        //[HttpGet("addProduct")]
+        //public async Task<ResultDTO> addProduct([FromBody]UserLoginDTO model) 
+        //{
+        //    return new ResultDTO
+        //    {
+        //        Message = "OK",
+        //        Status = 200
+        //    };
         
         
-        }
+        //}
     }
 }
