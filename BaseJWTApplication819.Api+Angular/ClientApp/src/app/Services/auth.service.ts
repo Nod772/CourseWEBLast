@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../Models/api.response';
+import { ApiResponse } from '../Models/api-response';
 import { SignInModel } from '../Models/sign-in.model';
 import { SignUpModel } from '../Models/sign-up.model';
 import { Router } from '@angular/router';

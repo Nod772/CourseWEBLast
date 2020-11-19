@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" style="max-width: 25%;">
+    <input type="text" nz-input placeholder="Search..." [(ngModel)]="search">
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" nzSearch (click)="searchClick()">
+      <i nz-icon nzType="search"></i>
+    </button>
+  </ng-template>
+  <nz-table #myTable [nzData]="discussions" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th *ngFor="let column of listOfColumn">{{ column.title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of myTable.data">
+
+        <td>{{ data.questionText }}</td>
+        <td>{{ data.counter }}</td>
+        <td>
+          <button nz-button nzType="primary" nz-popconfirm
+           nzPopconfirmPlacement="bottom"
+            nzOkText="OK" nzCancelText="Cancel" (nzOnConfirm)="ShowDiscussion(data.id)">
+            Show Discussion</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

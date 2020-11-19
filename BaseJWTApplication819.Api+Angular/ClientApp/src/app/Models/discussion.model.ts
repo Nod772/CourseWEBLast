@@ -1,15 +1,20 @@
 import { Options } from "./Options";
 
-export class Discussion {
+export class DiscussionModel {
   public id: number;
-  public questiontext: string;
+  public questionText: string;
   public options: Array<Options>;
+  public counter:number;
 
+  //constructor(Id: number, questiontext:string,options: Array<Options>) {
+  //  this.id = Id;
+  //  this.questiontext = questiontext;
+  //  this.options = this.options;
+  //}
+  constructor(){
 
-  constructor(Id: number, questiontext:string,options: Array<Options>) {
-    this.id = Id;
-    this.questiontext = questiontext;
-    this.options = this.options;
+    this.questionText = "";
+    this.counter=0;
 
   }
 }

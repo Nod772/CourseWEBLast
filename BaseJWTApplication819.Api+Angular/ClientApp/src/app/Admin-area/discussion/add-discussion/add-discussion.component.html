@@ -1,0 +1,27 @@
+<form nz-form (ngSubmit)="submitAdd()">
+<nz-form-item>
+
+
+    <nz-form-label [nzSpan]="6" nzFor="questiontext">Question Text</nz-form-label>
+    <nz-form-control [nzSpan]="14">
+     <input nz-input name="questiontext" type="text" id="title" [(ngModel)]="discussion.questionText">
+    </nz-form-control>
+
+    <nz-form-control [nzSpan]="14">
+     <input nz-input name="value"  type="text" id="value" [(ngModel)]="value">
+     <button nz-button type="button" (click)="addOption()" nzType="primary">Add Option</button>
+    </nz-form-control>
+
+
+</nz-form-item>
+
+
+
+
+
+  <nz-form-item nz-row class="register-area">
+    <nz-form-control [nzSpan]="14" [nzOffset]="6">
+      <button nz-button nzType="primary">Submit</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

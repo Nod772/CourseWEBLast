@@ -8,7 +8,7 @@ namespace BaseJWTApplication819.DataAccess.Entity
     {
         public int ID { get; set; }
         public string QuestionText { get; set; }
-       
+      
         public virtual List<Options>  Options { get; set; }
     }
     

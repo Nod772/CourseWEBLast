@@ -6,7 +6,7 @@ export class Options {
   constructor(Id: number, value:string,counter:number) {
     this.id = Id;
     this.value = value;
-    this.counter = this.counter;
+    this.counter = counter;
 
   }
 }

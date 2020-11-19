@@ -1,0 +1,27 @@
+ <div *ngIf="loaded">
+  <h2>Question {{discussion.id}}</h2>
+  <div>
+      <p><b>Question text:</b> {{discussion.questionText}}</p>
+      <p><b>Count of people:</b> {{discussion.counter}}</p>
+      <nz-table #myTable [nzData]="discussion.options" nzTableLayout="fixed">
+        <thead>
+          <tr>
+            <th *ngFor="let column of listOfColumn">{{ column.title }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of myTable.data">
+            <td>{{ data.value }}</td>
+
+            <td>
+              <button nz-button nzType="primary" nz-popconfirm
+                nzPopconfirmTitle="Are you sure you want to select this answer?" nzPopconfirmPlacement="bottom"
+                nzOkText="OK" nzCancelText="Cancel" (nzOnConfirm)="selectAnswer(data.id)" (nzOnCancel)="cancelSelectAnswer()">
+                Select</button>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+  </div>
+</div>
+

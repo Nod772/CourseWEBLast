@@ -8,8 +8,10 @@ import { ClientAreaComponent } from './Client-area/Client-area.component';
 import { AdminGuard } from './guards/admin.guard';
 import { notLoginGuard } from './guards/notLogin.guard';
 import { LoggedInGuard } from './guards/loggedIn.guard';
-//import { ProductListComponent } from './Admin-area/product-list/product-list.component';
-//import { AddProductComponent } from './Admin-area/add-product/add-product.component';
+import { DiscussionListComponent } from './Admin-area/discussion/discussion-list/discussion-list.component';
+import { AddDiscussionComponent } from './Admin-area/discussion/add-discussion/add-discussion.component';
+import { DiscussionDetailComponent } from './Admin-area/discussion/discussion-detail/discussion-detail.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -18,14 +20,17 @@ const routes: Routes = [
   {
     path: 'admin-panel',
     canActivate: [AdminGuard],
-    component: AdminAreaComponent
-  //  children: [
-      //{ path: '', pathMatch: 'full', canActivate: [AdminGuard], component: ProductListComponent },
-    //  { path: 'add-new-product', pathMatch: 'full', canActivate: [AdminGuard], component: AddProductComponent },
-    //]
+    component: AdminAreaComponent,
+    children: [
+      { path: '', pathMatch: 'full', component: DiscussionListComponent, canActivate: [AdminGuard]},
+        {path: 'question/:id', component: DiscussionDetailComponent },
 
+
+      { path: 'add-discussion', pathMatch: 'full', component: AddDiscussionComponent, canActivate: [AdminGuard] }
+    ]
   },
-  { path: 'client-panel', canActivate: [LoggedInGuard], pathMatch: 'full', component: ClientAreaComponent }
+  { path: 'client-panel', pathMatch: 'full', canActivate: [LoggedInGuard], component: ClientAreaComponent },
+
 ];
 
 

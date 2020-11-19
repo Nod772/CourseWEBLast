@@ -22,6 +22,8 @@ namespace BaseJWTApplication819.DataAccess
                 .WithOne(t => t.User)
                 .HasForeignKey<UserAdditionalInfo>(r => r.Id);
 
+            builder.Entity<Options>().HasOne(u => u.Discussion).WithMany(t => t.Options).OnDelete(DeleteBehavior.Cascade);
+
             base.OnModelCreating(builder);
         }
 

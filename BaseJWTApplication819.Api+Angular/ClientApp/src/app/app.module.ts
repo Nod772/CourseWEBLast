@@ -21,6 +21,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { NgZorroAntdModule } from './ng-zoro.module';
 import { TokenInterceptor } from './interceptor';
+import { DiscussionListComponent } from './Admin-area/discussion/discussion-list/discussion-list.component';
+import { AddDiscussionComponent } from './Admin-area/discussion/add-discussion/add-discussion.component';
+import { ClientListDiscussionComponent } from './Client-area/ClientListDiscussion/ClientListDiscussion.component';
+import { DiscussionDetailComponent } from './Admin-area/discussion/discussion-detail/discussion-detail.component';
 
 
 const antDesignIcons = AllIcons as {
@@ -47,7 +51,11 @@ const configNotifier: NotifierOptions = {
     AdminAreaComponent,
     ClientAreaComponent,
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    DiscussionListComponent,
+    AddDiscussionComponent,
+    ClientListDiscussionComponent,
+    DiscussionDetailComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

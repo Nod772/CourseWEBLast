@@ -11,7 +11,7 @@ namespace BaseJWTApplication819.DTO.Models
         public string Value { get; set; }
         public int Counter { get; set; }
 
-        public virtual Discussion Discussion { get; set; }
+      //  public virtual Discussion Discussion { get; set; }
     }
 }
 
